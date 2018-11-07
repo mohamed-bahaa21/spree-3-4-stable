@@ -1,6 +1,6 @@
 handle_ajax_error = (last_rollback, msg) ->
   $.jstree.rollback(last_rollback)
-  show_flash("error", Spree.translations.taxonomy_tree_error.toString())
+  show_flash("error", "<strong>" + Spree.translations.server_error + "</strong><br />" + msg +  " " + Spree.translations.taxonomy_tree_error)
 
 handle_move = (e, data) ->
   last_rollback = data.rlbk
