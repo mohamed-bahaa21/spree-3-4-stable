@@ -351,7 +351,8 @@
 					this.get_container().addClass("jstree-rtl").css("direction", "rtl");
 				}
 				this.get_container().html("<ul><li class='jstree-last jstree-leaf'><ins>&#160;</ins><a class='jstree-loading' href='#'><ins class='jstree-icon'>&#160;</ins>" + this._get_string("loading") + "</a></li></ul>");
-				this.data.core.li_height = this.get_container_ul().find("li.jstree-closed, li.jstree-leaf").eq(0).height() || 18;
+				this.data.core.li_height = 0;
+				// this.data.core.li_height = this.get_container_ul().find("li.jstree-closed, li.jstree-leaf").eq(0).height() || 18;
 
 				this.get_container()
 					.delegate("li > ins", "click.jstree", $.proxy(function (event) {
