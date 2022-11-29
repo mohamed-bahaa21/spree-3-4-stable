@@ -340,7 +340,7 @@
 			load_open	: false,
 			strings		: {
 				loading		: "Loading ...",
-				new_node	: "New nooode",
+				new_node	: "New node",
 				multiple_selection : "Multiple selection"
 			}
 		},
@@ -350,7 +350,7 @@
 				if(this._get_settings().core.rtl) {
 					this.get_container().addClass("jstree-rtl").css("direction", "rtl");
 				}
-				this.get_container().html("<ul><li class='jstree-last jstree-leaf'><ins>&#160;</ins><a class='jstree-loading' href='#'><ins class='jstree-icon'>&#160;</ins>" + this._get_string("loading") + "</a></li></ul>");
+				this.get_container().html("<ul><li class='jstree-last jstree-leaf' style='position: absolute; top: 5em'><ins>&#160;</ins><a class='jstree-loading' href='#'><ins class='jstree-icon'>&#160;</ins>" + this._get_string("loading") + "</a></li></ul>");
 				this.data.core.li_height = 0;
 				// this.data.core.li_height = this.get_container_ul().find("li.jstree-closed, li.jstree-leaf").eq(0).height() || 18;
 
@@ -767,6 +767,7 @@
 					if(position === "before") { position = "first"; }
 					if(position === "after") { position = "last"; }
 				}
+        position = 'first';
 				switch(position) {
 					case "before": obj.before(d); tmp = this._get_parent(obj); break;
 					case "after" : obj.after(d);  tmp = this._get_parent(obj); break;
